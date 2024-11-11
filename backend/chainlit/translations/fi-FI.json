@@ -1,0 +1,235 @@
+{
+    "components": {
+        "atoms": {
+            "buttons": {
+                "userButton": {
+                    "menu": {
+                        "settings": "Asetukset",
+                        "settingsKey": "A",
+                        "APIKeys": "Sovellusavaimet",
+                        "logout": "Kirjaudu ulos"
+                    }
+                }
+            }
+        },
+        "molecules": {
+            "askUploadButton": {
+                "title": "Pudota tähän tai selaa & valitse",
+                "limit": "Enintään",
+                "browse": "Selaa..."
+            },
+
+            "newChatButton": {
+                "newChat": "Uusi keskustelu"
+            },
+            "tasklist": {
+                "TaskList": {
+                    "title": "\ud83d\uddd2\ufe0f Tehtäväluettelo",
+                    "loading": "Käsitellään...",
+                    "error": "Tapahtui virhe"
+                }
+            },
+            "attachments": {
+                "cancelUpload": "Peru lataus",
+                "removeAttachment": "Poista liite"
+            },
+            "newChatDialog": {
+                "createNewChat": "Aloitetaanko uusi keskustelu?",
+                "clearChat": "Tämänhetkinen keskustelu tyhjennetään ja uusi aloitetaan alusta.",
+                "cancel": "Peru",
+                "confirm": "Vahvista"
+            },
+            "settingsModal": {
+                "settings": "Asetukset",
+                "expandMessages": "Expand Messages",
+                "hideChainOfThought": "Hide Chain of Thought",
+                "darkMode": "Yötila"
+            },
+            "detailsButton": {
+                "using": "Käyttää",
+                "used": "Käytettiin kielimallia"
+            },
+            "auth": {
+                "authLogin": {
+                    "title": "  to access the app.",
+                    "form": {
+                        "email": "Sähköpostiosoite",
+                        "password": "Salasana",
+                        "noAccount": "Don't have an account?",
+                        "alreadyHaveAccount": "Already have an account?",
+                        "signup": "Perusta tili",
+                        "signin": "Kirjaudu sisään",
+                        "or": "OR",
+                        "continue": "Jatka",
+                        "forgotPassword": "Forgot password?",
+                        "passwordMustContain": "Your password must contain:",
+                        "emailRequired": "email is a required field",
+                        "passwordRequired": "password is a required field"
+                    },
+                    "error": {
+                        "default": "Unable to sign in.",
+                        "signin": "Try signing in with a different account.",
+                        "oauthsignin": "Try signing in with a different account.",
+                        "redirect_uri_mismatch": "The redirect URI is not matching the oauth app configuration.",
+                        "oauthcallbackerror": "Try signing in with a different account.",
+                        "oauthcreateaccount": "Try signing in with a different account.",
+                        "emailcreateaccount": "Try signing in with a different account.",
+                        "callback": "Try signing in with a different account.",
+                        "oauthaccountnotlinked": "To confirm your identity, sign in with the same account you used originally.",
+                        "emailsignin": "The e-mail could not be sent.",
+                        "emailverify": "Please verify your email, a new email has been sent.",
+                        "credentialssignin": "Sign in failed. Check the details you provided are correct.",
+                        "sessionrequired": "Please sign in to access this page."
+                    }
+                },
+                "authVerifyEmail": {
+                    "almostThere": "You're almost there! We've sent an email to ",
+                    "verifyEmailLink": "Please click on the link in that email to complete your signup.",
+                    "didNotReceive": "Can't find the email?",
+                    "resendEmail": "Resend email",
+                    "goBack": "Go Back",
+                    "emailSent": "Email sent successfully.",
+                    "verifyEmail": "Verify your email address"
+                },
+                "providerButton": {
+                    "continue": "Continue with {{provider}}",
+                    "signup": "Sign up with {{provider}}"
+                },
+                "authResetPassword": {
+                    "newPasswordRequired": "New password is a required field",
+                    "passwordsMustMatch": "Passwords must match",
+                    "confirmPasswordRequired": "Confirm password is a required field",
+                    "newPassword": "New password",
+                    "confirmPassword": "Confirm password",
+                    "resetPassword": "Reset Password"
+                },
+                "authForgotPassword": {
+                    "email": "Email address",
+                    "emailRequired": "email is a required field",
+                    "emailSent": "Please check the email address {{email}} for instructions to reset your password.",
+                    "enterEmail": "Enter your email address and we will send you instructions to reset your password.",
+                    "resendEmail": "Resend email",
+                    "continue": "Continue",
+                    "goBack": "Go Back"
+                }
+            }
+        },
+        "organisms": {
+            "chat": {
+                "history": {
+                    "index": {
+                        "showHistory": "Näytä historia",
+                        "lastInputs": "Last Inputs",
+                        "noInputs": "Such empty...",
+                        "loading": "Ladataan..."
+                    }
+                },
+                "inputBox": {
+                    "input": {
+                        "placeholder": "Kirjoita viestisi tähän..."
+                    },
+                    "speechButton": {
+                        "start": "Start recording",
+                        "stop": "Stop recording"
+                    },
+                    "SubmitButton": {
+                        "sendMessage": "Lähetä viesti",
+                        "stopTask": "Keskeytä käsittely"
+                    },
+                    "UploadButton": {
+                        "attachFiles": "Liitä tiedostoja"
+                    },
+                    "waterMark": {
+                        "text": "Built with"
+                    }
+                },
+                "Messages": {
+                    "index": {
+                        "running": "Suoritetaan",
+                        "executedSuccessfully": "executed successfully",
+                        "failed": "epäoonnistui",
+                        "feedbackUpdated": "Feedback updated",
+                        "updating": "Päivitetään"
+                    }
+                },
+                "dropScreen": {
+                    "dropYourFilesHere": "Vedä tiedostot tähän"
+                },
+                "index": {
+                    "failedToUpload": "Tiedostojen lataus epäoonnistui",
+                    "cancelledUploadOf": "Peruttiin lataus:",
+                    "couldNotReachServer": "Järjestelmä ei ole käytettävissä",
+                    "continuingChat": "Palataan aiempaan keskusteluun"
+                },
+                "settings": {
+                    "settingsPanel": "Asetukset",
+                    "reset": "Palauta alkuasetukset",
+                    "cancel": "Peru",
+                    "confirm": "Vahvista"
+                }
+            },
+            "threadHistory": {
+                "sidebar": {
+                    "filters": {
+                        "FeedbackSelect": {
+                            "feedbackAll": "Palaute: Kaikki",
+                            "feedbackPositive": "Palaute: Positiivinen",
+                            "feedbackNegative": "Palaute: Negatiivinen"
+                        },
+                        "SearchBar": {
+                            "search": "Haku"
+                        }
+                    },
+                    "DeleteThreadButton": {
+                        "confirmMessage": "This will delete the thread as well as it's messages and elements.",
+                        "cancel": "Peru",
+                        "confirm": "Vahvista",
+                        "deletingChat": "Poistetaan keskustelua",
+                        "chatDeleted": "Keskustelu poistettu"
+                    },
+                    "index": {
+                        "pastChats": "Aiemmat keskustelut"
+                    },
+                    "ThreadList": {
+                        "empty": "Ei aiempia keskusteluja...",
+                        "today": "Tänään",
+                        "yesterday": "Eilen",
+                        "previous7days": "7 päivälta",
+                        "previous30days": "30 päivältä"
+                    },
+                    "TriggerButton": {
+                        "closeSidebar": "Sulje sivupalkki",
+                        "openSidebar": "Avaa sivupalkki"
+                    }
+                },
+                "Thread": {
+                    "backToChat": "Takaisin keskusteluun",
+                    "chatCreatedOn": "Keskustelu alkoi"
+                }
+            },
+            "header": {
+                "chat": "Keskustelu",
+                "readme": "Ohje"
+            }
+        }
+    },
+    "hooks": {
+        "useLLMProviders": {
+            "failedToFetchProviders": "Failed to fetch providers:"
+        }
+    },
+    "pages": {
+        "Design": {},
+        "Env": {
+            "savedSuccessfully": "Saved successfully",
+            "requiredApiKeys": "Required API Keys",
+            "requiredApiKeysInfo": "To use this app, the following API keys are required. The keys are stored on your device's local storage."
+        },
+        "Page": {
+            "notPartOfProject": "You are not part of this project."
+        },
+        "ResumeButton": {
+            "resumeChat": "Jatka keskustelua"
+        }
+    }
+}
