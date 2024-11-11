@@ -13,6 +13,11 @@
       }
     },
     "molecules": {
+      "askUploadButton": {
+        "title": "Drag and drop files here",
+        "limit": "Limit",
+        "browse": "Browse Files"
+      },
       "newChatButton": {
         "newChat": "New Chat"
       },
@@ -124,8 +129,7 @@
           },
           "speechButton": {
             "start": "Start recording",
-            "stop": "Stop recording",
-            "loading": "Connecting"
+            "stop": "Stop recording"
           },
           "SubmitButton": {
             "sendMessage": "Send message",
