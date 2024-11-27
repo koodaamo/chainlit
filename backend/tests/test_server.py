@@ -1,35 +1,22 @@
+import datetime  # Added import for datetime
 import os
-from pathlib import Path
 import pathlib
+from pathlib import Path
 from typing import Callable
 from unittest.mock import AsyncMock, Mock, create_autospec, mock_open
-import datetime  # Added import for datetime
 
 import pytest
-import tempfile
-from chainlit.session import WebsocketSession
-from chainlit.auth import get_current_user
-from chainlit.config import APP_ROOT, ChainlitConfig, load_config
-from chainlit.server import app
 from fastapi.testclient import TestClient
-from chainlit.types import FileReference
+
+from chainlit.auth import get_current_user
+from chainlit.config import APP_ROOT, ChainlitConfig
+from chainlit.server import app
 from chainlit.user import PersistedUser  # Added import for PersistedUser
 
 
 @pytest.fixture
 def test_client():
     return TestClient(app)
-
-
-@pytest.fixture
-def test_config(monkeypatch: pytest.MonkeyPatch, tmp_path: Path):
-    monkeypatch.setenv("CHAINLIT_ROOT_PATH", str(tmp_path))
-
-    config = load_config()
-
-    monkeypatch.setattr("chainlit.server.config", config)
-
-    return config
 
 
 @pytest.fixture
@@ -332,7 +319,7 @@ def test_get_file_non_existing_session(
 
     # Attempt to access the file without authentication by providing an invalid session_id
     response = test_client.get(
-        f"/project/file/nonexistent?session_id=unauthenticated_session_id"
+        "/project/file/nonexistent?session_id=unauthenticated_session_id"
     )
 
     # Verify the response
