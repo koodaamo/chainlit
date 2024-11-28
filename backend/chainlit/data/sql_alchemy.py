@@ -613,6 +613,9 @@ class SQLAlchemyDataLayer(BaseDataLayer):
         for thread in user_threads:
             thread_id = thread["thread_id"]
             if thread_id is not None:
+                meta = thread["thread_metadata"]
+                if isinstance(meta, str):
+                    meta = json.loads(meta)
                 thread_dicts[thread_id] = ThreadDict(
                     id=thread_id,
                     createdAt=thread["thread_createdat"],
@@ -620,7 +623,7 @@ class SQLAlchemyDataLayer(BaseDataLayer):
                     userId=thread["user_id"],
                     userIdentifier=thread["user_identifier"],
                     tags=thread["thread_tags"],
-                    metadata=thread["thread_metadata"],
+                    metadata=meta,
                     steps=[],
                     elements=[],
                 )
