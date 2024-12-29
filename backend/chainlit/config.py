@@ -18,7 +18,8 @@ from typing import (
 
 import tomli
 from dataclasses_json import DataClassJsonMixin
-from pydantic.dataclasses import Field, dataclass
+from pydantic import Field
+from pydantic.dataclasses import dataclass
 from starlette.datastructures import Headers
 
 from chainlit.data.base import BaseDataLayer
@@ -35,7 +36,11 @@ if TYPE_CHECKING:
     from chainlit.message import Message
     from chainlit.types import ChatProfile, InputAudioChunk, Starter, ThreadDict
     from chainlit.user import User
-
+else:
+    # Pydantic needs to resolve forward annotations. Because all of these are used
+    # within `typing.Callable`, alias to `Any` as Pydantic does not perform validation
+    # of callable argument/return types anyway.
+    Request = Response = Action = Message = ChatProfile = InputAudioChunk = Starter = ThreadDict = User = Any  # fmt: off
 
 BACKEND_ROOT = os.path.dirname(__file__)
 PACKAGE_ROOT = os.path.dirname(os.path.dirname(BACKEND_ROOT))
@@ -89,6 +94,9 @@ auto_tag_thread = true
 
 # Allow users to edit their own messages
 edit_message = true
+
+# Use httponly cookie for client->server authentication, required to be able to use file upload and elements.
+cookie_auth = true
 
 # Authorize users to spontaneously upload files with messages
 [features.spontaneous_file_upload]
@@ -306,6 +314,8 @@ class CodeSettings:
 @dataclass()
 class ProjectSettings(DataClassJsonMixin):
     allow_origins: List[str] = Field(default_factory=lambda: ["*"])
+    # Socket.io client transports option
+    transports: Optional[List[str]] = None
     enable_telemetry: bool = True
     # List of environment variables to be provided by each user to use the app. If empty, no environment variables will be asked to the user.
     user_env: Optional[List[str]] = None
@@ -320,6 +330,8 @@ class ProjectSettings(DataClassJsonMixin):
     cache: bool = False
     # Follow symlink for asset mount (see https://github.com/Chainlit/chainlit/issues/317)
     follow_symlink: bool = False
+    # Use httponly cookie for client->server authentication, required to be able to use file upload and elements.
+    cookie_auth: bool = True
 
 
 @dataclass()
